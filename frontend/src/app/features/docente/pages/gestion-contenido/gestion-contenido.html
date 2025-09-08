@@ -1,0 +1,81 @@
+<main class="container my-4 my-lg-5">
+  <!-- Encabezado de la sección -->
+  <header class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+    <h1 class="dashboard-title mb-3 mb-md-0"><img src="/icons/pencil.svg" alt="" height="40px" width="40px"> Gestión de Contenido</h1>
+    <button class="btn btn-primary d-flex align-items-center gap-2" (click)="openModal()">
+      <i class="fas fa-plus-circle"></i>
+      Agregar Contenido
+    </button>
+  </header>
+
+  <!-- Sección de Filtros -->
+  <section class="filters-section card card-body mb-4">
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+          <input type="text" class="form-control" placeholder="Buscar por título, tema o materia...">
+        </div>
+      </div>
+      <div class="col-md-3 col-lg-3">
+        <select class="form-select">
+          <option selected>Todas las materias</option>
+          <option value="matematica">Matemática</option>
+          <option value="lengua">Lengua</option>
+        </select>
+      </div>
+      <div class="col-md-3 col-lg-3">
+        <select class="form-select">
+          <option selected>Todos los temas</option>
+          <option value="algebra">Álgebra</option>
+          <option value="gramatica">Gramática</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid de Contenido -->
+  <section class="row g-4">
+    <!-- Card de Contenido (Ejemplo 1) -->
+    <div class="col-md-6 col-lg-4">
+      <div class="content-card card h-100">
+        <div class="card-body d-flex flex-column">
+          <div class="mb-2">
+            <span class="badge bg-primary-n">Matemática</span>
+          </div>
+          <h5 class="card-title">Ejercicios de Álgebra</h5>
+          <p class="card-text flex-grow-1">Conjunto de ejercicios sobre ecuaciones de primer año para reforzar conceptos básicos.</p>
+          <div class="card-actions d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-pencil-alt"></i> Editar</button>
+            <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i> Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card de Contenido (Ejemplo 2) -->
+    <div class="col-md-6 col-lg-4">
+      <div class="content-card card h-100">
+        <div class="card-body d-flex flex-column">
+          <div class="mb-2">
+            <span class="badge bg-secondary-n">Lengua</span>
+          </div>
+          <h5 class="card-title">Análisis de Sintaxis</h5>
+          <p class="card-text flex-grow-1">Guía práctica para identificar sujeto y predicado en oraciones complejas.</p>
+          <div class="card-actions d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-outline-secondary btn-sm"><i class="fas fa-pencil-alt"></i> Editar</button>
+            <button class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i> Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Las cartas que carge son como puse, de ejemplo. La idea es tener una carga dinamica mas adelante pero eso lo veremos en los siguientes Sprints -->
+  </section>
+</main>
+
+<!-- Modal Component -->
+<app-contenido-form-modal 
+  [isOpen]="isModalOpen" 
+  (closeModal)="closeModal()">
+</app-contenido-form-modal>
